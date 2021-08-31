@@ -15,7 +15,7 @@ hi Floaterm guibg=Grey15
 hi FloatermBorder guifg=Orange guibg=DarkGreen
 "hi FloatermNC guibg=darkred
 
-nnoremap   <silent>   <F8>    :FloatermNew --position=bottomleft --height=0.8 --width=0.6 --title='Git' lazygit<CR>
+nnoremap   <F8>    :FloatermNew --position=bottomleft --height=0.8 --width=0.6 --title='Git' lazygit<CR>
 
 " === User-defined mapping ===
 nnoremap   <silent>   <F9>    :FloatermNew powershell -nologo<CR>

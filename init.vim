@@ -18,7 +18,7 @@ call plug#begin('~/AppData/Local/nvim/plugged')
   Plug 'joshdick/onedark.vim' 									" Dark theme
 
 "{{ File browser }}
-  Plug 'scrooloose/nerdTree' 									" File browser  
+  Plug 'preservim/nerdTree' 									" File browser  
   Plug 'Xuyuanp/nerdtree-git-plugin' 							" Git status
   Plug 'ryanoasis/vim-devicons' 								" Icon
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
@@ -46,10 +46,10 @@ call plug#begin('~/AppData/Local/nvim/plugged')
   Plug 'jackguo380/vim-lsp-cxx-highlight' 						" C++ syntax highlight
   
 "{{ Debugging }}
-Plug 'puremourning/vimspector' 									" Vimspector
+  Plug 'puremourning/vimspector' 									" Vimspector
 
 "{{ Source code version control }}
-Plug 'tpope/vim-fugitive' 										" Git
+  Plug 'tpope/vim-fugitive' 										" Git
 
 call plug#end()
 
@@ -59,7 +59,7 @@ call plug#end()
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=a 				" Enable mouse
 set tabstop=4 				" 
-set shiftwidth=2 			" 
+set shiftwidth=4 			" 
 set listchars=tab:\|\ 		" Tab charactor 
 set list
 set foldmethod=indent 		" 
@@ -138,20 +138,24 @@ nmap <M-Up> :resize -1<CR>
 " Search a hightlighted text
 vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Oher settings 
+" => Other plug-in's settings 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
-" Direcotory
 let nvim_settings_dir = '~\AppData\Local\nvim\settings\'
-let nvim_plug_dir = 	'~\AppData\local\nvim\plugged\'
 
-" Enable auto close HTML tag
-let g:closetag_html_style=1
-source ~\AppData\Local\nvim\plugged\closetag.vim
-
-" Extended settings
 execute 'source '.nvim_settings_dir.'coc.vim'
 execute 'source '.nvim_settings_dir.'floaterm.vim'
 execute 'source '.nvim_settings_dir.'nerdtree.vim'
 execute 'source '.nvim_settings_dir.'fzf.vim'
 execute 'source '.nvim_settings_dir.'vimspector.vim'
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Other scripts 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
+let nvim_scripts_dir = '~\AppData\Local\nvim\scripts\'
+
+" Enable auto close HTML tag
+let g:closetag_html_style=1
+execute 'source '.nvim_scripts_dir.'closetag.vim'
