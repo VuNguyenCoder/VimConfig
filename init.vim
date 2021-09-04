@@ -12,7 +12,13 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => VimPlug for managing Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call plug#begin('~/AppData/Local/nvim/plugged')
+if has('win32')
+	let nvim_config_dir = '~/AppData/Local/nvim/'
+else
+	let nvim_config_dir = '~/.config/nvim/'
+endif
+
+call plug#begin(nvim_config_dir.'plugged')
 
 "{{ Theme }}
   Plug 'joshdick/onedark.vim' 									" Dark theme
@@ -106,6 +112,7 @@ let g:airline_powerline_fonts = 1 									" Enable
 if has('win32')
   set guifont=Droid\ Sans\ Mono\ for\ Powerline:h15 				" Powerline font
 endif
+
 " Status bar
 let g:airline_theme='onedark' 										" Theme OneDark
 let g:airline#extensions#tabline#enabled = 1 						" Enable Tab bar
@@ -142,7 +149,7 @@ vnoremap // y/\V<C-R>=escape(@",'/\')<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other plug-in's settings 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
-let nvim_settings_dir = '~\AppData\Local\nvim\settings\'
+let nvim_settings_dir = nvim_config_dir.'settings/'
 
 execute 'source '.nvim_settings_dir.'coc.vim'
 execute 'source '.nvim_settings_dir.'floaterm.vim'
@@ -154,7 +161,7 @@ execute 'source '.nvim_settings_dir.'vimspector.vim'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Other scripts 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
-let nvim_scripts_dir = '~\AppData\Local\nvim\scripts\'
+let nvim_scripts_dir = nvim_config_dir.'scripts/'
 
 " Enable auto close HTML tag
 let g:closetag_html_style=1

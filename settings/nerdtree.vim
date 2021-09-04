@@ -13,6 +13,7 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 
 "let NERDTreeMapOpenInTab='<ENTER>'
 
+" Git status icon
 let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Modified'  :'✹',
                 \ 'Staged'    :'✚',

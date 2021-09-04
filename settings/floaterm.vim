@@ -17,19 +17,33 @@ hi FloatermBorder guifg=Orange guibg=DarkGreen
 
 nnoremap   <F8>    :FloatermNew --position=bottomleft --height=0.8 --width=0.6 --title='Git' lazygit<CR>
 
-" === User-defined mapping ===
-nnoremap   <silent>   <F9>    :FloatermNew powershell -nologo<CR>
-tnoremap   <silent>   <F9>    <C-\><C-n>:FloatermNew powershell -nologo<CR>
-nnoremap   <silent>   <C-F9>  :FloatermKill<CR>:FloatermPrev<CR>
-tnoremap   <silent>   <C-F9>  <C-\><C-n>:FloatermKill<CR>:FloatermPrev<CR>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Hotkey to manage terminals
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Open a new terminal 
+if has('win32')
+	nnoremap   <silent>   <leader>to    :FloatermNew powershell -nologo<CR>
+	tnoremap   <silent>   <leader>to    <C-\><C-n>:FloatermNew powershell -nologo<CR>
+else 
+	nnoremap   <silent>   <leader>to    :FloatermNew<CR>
+	tnoremap   <silent>   <leader>to    <C-\><C-n>:FloatermNew<CR>
+endif
 
-nnoremap   <silent>   <F10>    :FloatermNext<CR>
-tnoremap   <silent>   <F10>    <C-\><C-n>:FloatermNext<CR>
-nnoremap   <silent>   <C-F10>    :FloatermPrev<CR>
-tnoremap   <silent>   <C-F10>    <C-\><C-n>:FloatermPrev<CR>
+" Kill current terminal 
+nnoremap <silent> 	<leader>tk 		:FloatermKill<CR>:FloatermPrev<CR>
+tnoremap <silent> 	<leader>tk 		<C-\><C-n>:FloatermKill<CR>:FloatermPrev<CR>
 
-nnoremap   <silent>   <F11>   :FloatermToggle<CR>
-tnoremap   <silent>   <F11>   <C-\><C-n>:FloatermToggle<CR>
-nnoremap   <silent>   <C-F11> <C-\><C-n><C-W><Left>
-tnoremap   <silent>   <C-F11> <C-\><C-n><C-W><Left>
+" Navigation next and previous terminal 
+nnoremap <silent> 	<leader>tn 		:FloatermNext<CR>
+tnoremap <silent> 	<leader>tn 		<C-\><C-n>:FloatermNext<CR>
+nnoremap <silent> 	<leader>tp 		:FloatermPrev<CR>
+tnoremap <silent> 	<leader>tp 		<C-\><C-n>:FloatermPrev<CR>
+
+" Toggle terminal
+nnoremap <silent> 	<leader>tt 		:FloatermToggle<CR>
+tnoremap <silent> 	<leader>tt 		<C-\><C-n>:FloatermToggle<CR>
+
+" Focus terminal 
+nnoremap <silent> 	<leader>tf 		<C-\><C-n><C-W><Left>
+tnoremap <silent> 	<leader>tf 		<C-\><C-n><C-W><Left>
 
