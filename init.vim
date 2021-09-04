@@ -8,18 +8,18 @@
 " http://youtube.com/VuNguyenCoder
 " http://facebook.com/VuNguyenCoder
 
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => VimPlug for managing Plugins
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Global path setting
 if has('win32')
 	let nvim_config_dir = '~/AppData/Local/nvim/'
 else
 	let nvim_config_dir = '~/.config/nvim/'
 endif
 
-call plug#begin(nvim_config_dir.'plugged')
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => VimPlug for managing Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+call plug#begin(nvim_config_dir.'plugged')
 "{{ Theme }}
   Plug 'joshdick/onedark.vim' 									" Dark theme
 
@@ -71,7 +71,6 @@ set list
 set foldmethod=indent 		" 
 set foldlevelstart=99 		"  
 set number 					" Show line number
-syntax on 					" Enable syntax hightlight
 set ignorecase 				" Enable case-sensitive 
 
 " Enable copying from vim to clipboard
@@ -96,8 +95,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Color
-colorscheme onedark
+syntax on 					" Enable syntax hightlight
+colorscheme onedark 		" Select scheme
 
 " Overwrite color highlight 
 if (has("autocmd"))
@@ -108,7 +107,7 @@ if (has("autocmd"))
 endif
 
 " Font 
-let g:airline_powerline_fonts = 1 									" Enable 
+let g:airline_powerline_fonts = 1 									" Enable font for status bar
 if has('win32')
   set guifont=Droid\ Sans\ Mono\ for\ Powerline:h15 				" Powerline font
 endif
