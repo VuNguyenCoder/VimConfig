@@ -48,8 +48,9 @@ call plug#begin(nvim_config_dir.'plugged')
 
 "{{ Code syntax highlight }}
   Plug 'yuezk/vim-js' 											" Javascript
-  Plug 'MaxMEllon/vim-jsx-pretty' 								" JSX/React syntax highlight
-  Plug 'jackguo380/vim-lsp-cxx-highlight' 						" C++ syntax highlight
+  Plug 'MaxMEllon/vim-jsx-pretty' 								" JSX/React
+  Plug 'jackguo380/vim-lsp-cxx-highlight' 						" C++ syntax
+  Plug 'uiiaoo/java-syntax.vim' 								" Java 
   
 "{{ Debugging }}
   Plug 'puremourning/vimspector' 									" Vimspector
@@ -124,9 +125,10 @@ let g:airline#extensions#whitespace#enabled = 0  					" Remove warning whitespac
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Code syntax highlight
+" => Code syntax highlight enable
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""" 
 let g:javascript_plugin_jsdoc = 1
+
 let g:cpp_class_scope_highlight = 1
 let g:cpp_member_variable_highlight = 1
 let g:cpp_class_decl_highlight = 1

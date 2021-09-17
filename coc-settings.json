@@ -142,6 +142,12 @@
 						"command": "php",
 						"args": ["/path/to/vendor/felixfbecker/language-server/bin/php-language-server.php"],
 						"filetypes": ["php"]
-				}
+				}//,
+//				"haskell": {
+//						"command": "haskell-language-server-wrapper",
+//						"args": ["--lsp"],
+//    					"rootPatterns": ["*.cabal", "stack.yaml", "cabal.project", "package.yaml", "hie.yaml"],
+//    					"filetypes": ["haskell", "lhaskell"]
+//				}
 		}
 }
