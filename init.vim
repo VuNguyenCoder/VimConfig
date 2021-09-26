@@ -92,6 +92,10 @@ autocmd FileChangedShellPost *
 " Disable automatic comment in newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+" Disable backup
+set nobackup
+set nowb
+set noswapfile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theme
