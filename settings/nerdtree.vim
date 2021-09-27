@@ -27,3 +27,6 @@ let g:NERDTreeGitStatusIndicatorMapCustom = {
                 \ 'Unknown'   :'?',
                 \ }
 
+" Hightlight current file
+let g:nerdtree_sync_cursorline = 1
+
