@@ -115,13 +115,7 @@ if (has("autocmd"))
 endif
 
 " Font 
-let g:airline_powerline_fonts = 1 									" Enable font for status bar
-if has('gui_running')
-	" If vim client running, the font is set.
-	set guifont=Droid\ Sans\ Mono\ for\ Powerline:h15 				" Powerline font
-else
-	" If vim console running, the font is up to terminal font 
-endif
+let g:airline_powerline_fonts = 1 							" Enable font for status bar
 
 " Status bar
 let g:airline_theme='onedark' 								" Theme OneDark
