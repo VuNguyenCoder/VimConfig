@@ -20,46 +20,48 @@ endif
 " => VimPlug for managing Plugins
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#begin(nvim_config_dir.'plugged')
-"{{ Theme }}
-  Plug 'joshdick/onedark.vim' 									" Dark theme
+" Theme
+  Plug 'joshdick/onedark.vim' 							" Dark theme
 
-"{{ File browser }}
-  Plug 'preservim/nerdTree' 									" File browser  
-  Plug 'Xuyuanp/nerdtree-git-plugin' 							" Git status
-  Plug 'ryanoasis/vim-devicons' 								" Icon
+" File browser
+  Plug 'preservim/nerdTree' 							" File browser  
+  Plug 'Xuyuanp/nerdtree-git-plugin' 					" Git status
+  Plug 'ryanoasis/vim-devicons' 						" Icon
   Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'unkiwii/vim-nerdtree-sync' 						" Sync current file 
 
-"{{ File search }}
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 			" Fuzzy finder 
+" File search
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } 	" Fuzzy finder 
   Plug 'junegunn/fzf.vim'
 
-"{{ Status bar }}
+" Status bar
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
 
-"{{ Terminal }}
-  Plug 'voldikss/vim-floaterm' 									" Float terminal
+" Terminal
+  Plug 'voldikss/vim-floaterm' 							" Float terminal
 
-"{{ Code intellisense }}
-  Plug 'neoclide/coc.nvim', {'branch': 'release'} 				" Language server 
-  Plug 'jiangmiao/auto-pairs' 									" Auto pairs
-  Plug 'alvan/vim-closetag' 									" 
-  Plug 'mattn/emmet-vim' 				
+" Code intellisense
+  Plug 'neoclide/coc.nvim', {'branch': 'release'} 		" Language server 
+  Plug 'jiangmiao/auto-pairs' 							" Parenthesis auto 
+  Plug 'alvan/vim-closetag'
+  Plug 'mattn/emmet-vim' 
+  Plug 'preservim/nerdcommenter' 						" Comment code 
+  Plug 'liuchengxu/vista.vim' 							" Function tag bar 
 
-"{{ Code syntax highlight }}
-  Plug 'yuezk/vim-js' 											" Javascript
-  Plug 'MaxMEllon/vim-jsx-pretty' 								" JSX/React
-  Plug 'jackguo380/vim-lsp-cxx-highlight' 						" C++ syntax
-  Plug 'uiiaoo/java-syntax.vim' 								" Java 
+" Code syntax highlight
+  Plug 'yuezk/vim-js' 							" Javascript
+  Plug 'MaxMEllon/vim-jsx-pretty' 				" JSX/React
+  Plug 'jackguo380/vim-lsp-cxx-highlight'		" C++ syntax
+  Plug 'uiiaoo/java-syntax.vim' 				" Java 
   
-"{{ Debugging }}
-  Plug 'puremourning/vimspector' 									" Vimspector
+" Debugging
+  Plug 'puremourning/vimspector' 				" Vimspector
 
 "{{ Source code version control }}
-  Plug 'tpope/vim-fugitive' 										" Git
-
+  Plug 'tpope/vim-fugitive' 					" Git
+	
 call plug#end()
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General settings
@@ -67,12 +69,17 @@ call plug#end()
 set mouse=a 				" Enable mouse
 set tabstop=4 				" 
 set shiftwidth=4 			" 
-set listchars=tab:\|\ 		" Tab charactor 
+set listchars=tab:\¦\ 		" Tab charactor 
 set list
 set foldmethod=indent 		" 
 set foldlevelstart=99 		"  
 set number 					" Show line number
 set ignorecase 				" Enable case-sensitive 
+
+" Disable backup
+set nobackup
+set nowb
+set noswapfile
 
 " Enable copying from vim to clipboard
 if has('win32')
@@ -92,10 +99,6 @@ autocmd FileChangedShellPost *
 " Disable automatic comment in newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Disable backup
-set nobackup
-set nowb
-set noswapfile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Theme
@@ -118,14 +121,17 @@ if has('win32')
 endif
 
 " Status bar
-let g:airline_theme='onedark' 										" Theme OneDark
-let g:airline#extensions#tabline#enabled = 1 						" Enable Tab bar
-let g:airline#extensions#tabline#left_sep = ' ' 					" Enable Tab seperator 
-let g:airline#extensions#tabline#left_alt_sep = '|' 				" Enable Tab seperator
+let g:airline_theme='onedark' 								" Theme OneDark
+let g:airline#extensions#tabline#enabled = 1 				" Enable Tab bar
+let g:airline#extensions#tabline#left_sep = ' ' 			" Enable Tab seperator 
+let g:airline#extensions#tabline#left_alt_sep = '|' 		" Enable Tab seperator
 let g:airline#extensions#tabline#formatter = 'default'
-let g:airline#extensions#tabline#fnamemod = ':t' 					" Set Tab name as file name
+let g:airline#extensions#tabline#fnamemod = ':t' 			" Set Tab name as file name
 
-let g:airline#extensions#whitespace#enabled = 0  					" Remove warning whitespace"
+let g:airline#extensions#whitespace#enabled = 0  			" Remove warning whitespace"
+
+" Browser
+let g:nerdtree_sync_cursorline = 1 							" Hightlight current file in browser 
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -161,6 +167,8 @@ execute 'source '.nvim_settings_dir.'floaterm.vim'
 execute 'source '.nvim_settings_dir.'nerdtree.vim'
 execute 'source '.nvim_settings_dir.'fzf.vim'
 execute 'source '.nvim_settings_dir.'vimspector.vim'
+execute 'source '.nvim_settings_dir.'nerdcommenter.vim'
+execute 'source '.nvim_settings_dir.'vista.vim'
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
