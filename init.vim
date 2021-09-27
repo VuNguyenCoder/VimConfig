@@ -96,13 +96,13 @@ call plug#begin(stdpath('config').'/plugged')
 	Plug 'mattn/emmet-vim' 
 	Plug 'preservim/nerdcommenter' 					" Comment code 
 	Plug 'liuchengxu/vista.vim' 					" Function tag bar 
+	Plug 'alvan/vim-closetag' 						" Auto close HTML/XML tag 
 
 " Code syntax highlight
 	Plug 'yuezk/vim-js' 							" Javascript
 	Plug 'MaxMEllon/vim-jsx-pretty' 				" JSX/React
 	Plug 'jackguo380/vim-lsp-cxx-highlight'			" C++ syntax
 	Plug 'uiiaoo/java-syntax.vim' 					" Java
-	Plug 'alvan/vim-closetag'
   
 " Debugging
 	Plug 'puremourning/vimspector' 					" Vimspector
