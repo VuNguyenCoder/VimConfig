@@ -97,7 +97,7 @@ call plug#begin(stdpath('config').'/plugged')
 	Plug 'preservim/nerdcommenter' 					" Comment code 
 	Plug 'liuchengxu/vista.vim' 					" Function tag bar 
 	Plug 'alvan/vim-closetag' 						" Auto close HTML/XML tag 
-
+	Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 " Code syntax highlight
 	Plug 'yuezk/vim-js' 							" Javascript
 	Plug 'MaxMEllon/vim-jsx-pretty' 				" JSX/React
