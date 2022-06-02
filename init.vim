@@ -27,6 +27,7 @@ set ignorecase 				" Enable case-sensitive
 set nobackup
 set nowb
 set noswapfile
+set nocompatible
 
 syntax on
 
@@ -110,6 +111,7 @@ call plug#begin(stdpath('config').'/plugged')
 
 " Source code version control 
 	Plug 'tpope/vim-fugitive' 						" Git
+    Plug 'samoshkin/vim-mergetool' 
 call plug#end()
 
 
@@ -136,4 +138,3 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 for setting_file in split(glob(stdpath('config').'/settings/*.vim'))
 	execute 'source' setting_file
 endfor
-
