@@ -49,6 +49,4 @@ tnoremap <silent> <leader>tf <C-\><C-n><C-W><Left>
 " => Hotkey to run other console apps
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Git 
-nnoremap <silent> <leader>gl :FloatermNew --position=bottomright --height=0.95 --width=0.4 --title='GitLog' git log --graph --abbrev-commit --decorate --all<CR>
-
-
+nnoremap <silent> <leader>gl :FloatermNew! --position=bottomright --height=0.95 --width=0.7 --title='GitLog' git lg<CR>
