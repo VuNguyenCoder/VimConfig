@@ -18,8 +18,9 @@ set shiftwidth=2            "
 set expandtab
 set listchars=tab:\¦\       " Tab charactor 
 set list
-set foldmethod=indent       " 
-set foldlevelstart=99       "  
+set foldmethod=syntax       " 
+set foldnestmax=1
+set foldlevelstart=0        "  
 set number                  " Show line number
 set ignorecase              " Enable case-sensitive 
 
@@ -27,7 +28,11 @@ set ignorecase              " Enable case-sensitive
 set nobackup
 set nowb
 set noswapfile
-set nocompatible
+
+" Optimize 
+set synmaxcol=200
+set lazyredraw
+au! BufNewFile,BufRead *.json set foldmethod=indent " Change foldmethod for specific filetype
 
 syntax on
 
