@@ -1,3 +1,13 @@
+" Extensions need to be installed at first startup
+let g:coc_global_extensions = [
+      \'coc-css',
+      \'coc-git',
+      \'coc-highlight',
+      \'coc-html',
+      \'coc-json',
+      \'coc-pyright',
+      \'coc-vimlsp',
+      \]
 " Set internal encoding of vim, not needed on neovim, since coc.nvim using some
 " unicode characters in the file autoload/float.vim
 set encoding=utf-8

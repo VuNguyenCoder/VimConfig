@@ -13,8 +13,8 @@
 " => General settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=a                 " Enable mouse
-set tabstop=4               " 
-set shiftwidth=4            " 
+set tabstop=2               " 
+set shiftwidth=2            " 
 set expandtab
 set listchars=tab:\¦\       " Tab charactor 
 set list
@@ -73,45 +73,47 @@ call plug#begin(stdpath('config').'/plugged')
 	Plug 'joshdick/onedark.vim', 					" Dark theme
 
 " File browser
-	Plug 'preservim/nerdTree' 						" File browser  
-	Plug 'Xuyuanp/nerdtree-git-plugin' 				" Git status
-	Plug 'ryanoasis/vim-devicons' 					" Icon
-	Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
-	Plug 'unkiwii/vim-nerdtree-sync' 				" Sync current file 
+  Plug 'preservim/nerdTree' 						" File browser  
+  Plug 'Xuyuanp/nerdtree-git-plugin' 				" Git status
+  Plug 'ryanoasis/vim-devicons' 					" Icon
+  Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+  Plug 'unkiwii/vim-nerdtree-sync' 				" Sync current file 
 
 " File search
-	Plug 'junegunn/fzf', 
-		\ { 'do': { -> fzf#install() } } 			" Fuzzy finder 
-	Plug 'junegunn/fzf.vim'
+  Plug 'junegunn/fzf', 
+    \ { 'do': { -> fzf#install() } } 			" Fuzzy finder 
+  Plug 'junegunn/fzf.vim'
 
 " Status bar
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
 
 " Terminal
-	Plug 'voldikss/vim-floaterm' 					" Float terminal
+  Plug 'voldikss/vim-floaterm' 					" Float terminal
 
 " Code intellisense
-	Plug 'neoclide/coc.nvim', {'branch': 'release'} " Language server 
-	Plug 'jiangmiao/auto-pairs' 					" Parenthesis auto 
-	Plug 'alvan/vim-closetag'
-	Plug 'mattn/emmet-vim' 
-	Plug 'preservim/nerdcommenter' 					" Comment code 
-	Plug 'liuchengxu/vista.vim' 					" Function tag bar 
-	Plug 'alvan/vim-closetag' 						" Auto close HTML/XML tag 
-	Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
+  Plug 'neoclide/coc.nvim', {'branch': 'release'} " Language server 
+  Plug 'jiangmiao/auto-pairs' 					" Parenthesis auto 
+  Plug 'alvan/vim-closetag'
+  Plug 'mattn/emmet-vim' 
+  Plug 'preservim/nerdcommenter' 					" Comment code 
+  Plug 'liuchengxu/vista.vim' 					" Function tag bar 
+  Plug 'alvan/vim-closetag' 						" Auto close HTML/XML tag 
+  Plug 'pappasam/coc-jedi', { 'do': 'yarn install --frozen-lockfile && yarn build', 'branch': 'main' }
 " Code syntax highlight
-	Plug 'yuezk/vim-js' 							" Javascript
-	Plug 'MaxMEllon/vim-jsx-pretty' 				" JSX/React
-	Plug 'jackguo380/vim-lsp-cxx-highlight'			" C++ syntax
-	Plug 'uiiaoo/java-syntax.vim' 					" Java
+  Plug 'yuezk/vim-js' 							" Javascript
+  Plug 'MaxMEllon/vim-jsx-pretty' 				" JSX/React
+  Plug 'jackguo380/vim-lsp-cxx-highlight'			" C++ syntax
+  Plug 'uiiaoo/java-syntax.vim' 					" Java
   
 " Debugging
-	Plug 'puremourning/vimspector' 					" Vimspector
+  Plug 'puremourning/vimspector' 					" Vimspector
 
 " Source code version control 
-	Plug 'tpope/vim-fugitive' 						" Git
-    Plug 'samoshkin/vim-mergetool' 
+  Plug 'tpope/vim-fugitive' 						" Git
+  Plug 'tpope/vim-rhubarb'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'samoshkin/vim-mergetool' 
 call plug#end()
 
 
