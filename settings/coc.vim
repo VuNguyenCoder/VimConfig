@@ -1,8 +1,6 @@
 " Extensions need to be installed at first startup
 let g:coc_global_extensions = [
       \'coc-css',
-      \'coc-git',
-      \'coc-highlight',
       \'coc-html',
       \'coc-json',
       \'coc-pyright',
