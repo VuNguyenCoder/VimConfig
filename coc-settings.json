@@ -30,7 +30,12 @@
         "typeParameter": "\uf728",
         "default": "\uf29c"
     },
-    "jedi.executable.command": "~/.local/bin/jedi-language-server",
+    "jedi": {
+        "enable": true,
+        "startupMessage": true,
+        "executable.command": "jedi-language-server",
+
+    },
     "languageserver": { 
         // C++
         "ccls": {

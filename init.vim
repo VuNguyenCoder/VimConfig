@@ -13,14 +13,14 @@
 " => General settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=a                 " Enable mouse
-set tabstop=2               " 
-set shiftwidth=2            " 
+set tabstop=4               " 
+set shiftwidth=4            " 
 set expandtab
 set listchars=tab:\¦\       " Tab charactor 
 set list
-set foldmethod=syntax       " 
+set foldmethod=syntax         
 set foldnestmax=1
-set foldlevelstart=0        "  
+set foldlevelstart=3        "  
 set number                  " Show line number
 set ignorecase              " Enable case-sensitive 
 
@@ -81,9 +81,9 @@ call plug#begin(stdpath('config').'/plugged')
   Plug 'preservim/nerdTree'                     " File browser  
   Plug 'Xuyuanp/nerdtree-git-plugin'            " Git status
   Plug 'ryanoasis/vim-devicons'                 " Icon
-  Plug 'tiagofumo'
-          \ .'/vim-nerdtree-syntax-highlight'
   Plug 'unkiwii/vim-nerdtree-sync'              " Sync current file 
+  Plug 'jcharum/vim-nerdtree-syntax-highlight',
+    \ {'branch': 'escape-keys'}
 
 " File search
   Plug 'junegunn/fzf', 
@@ -100,12 +100,11 @@ call plug#begin(stdpath('config').'/plugged')
 " Code intellisense
   Plug 'neoclide/coc.nvim', 
     \ {'branch': 'release'}                     " Language server protocol (LSP) 
-  Plug 'pappasam/coc-jedi',                     " Jedi language server 
   Plug 'jiangmiao/auto-pairs'                   " Parenthesis auto 
   Plug 'alvan/vim-closetag'
   Plug 'mattn/emmet-vim' 
   Plug 'preservim/nerdcommenter'                " Comment code 
-  Plug 'liuchengxu/vista.vim'                   " Function tag bar 
+  " Plug 'liuchengxu/vista.vim'                   " Function tag bar
   Plug 'alvan/vim-closetag'                     " Auto close HTML/XML tag 
     \ { 
       \ 'do': 'yarn install '
@@ -128,6 +127,9 @@ call plug#begin(stdpath('config').'/plugged')
   Plug 'tpope/vim-rhubarb' 
   Plug 'airblade/vim-gitgutter'                 " Git show changes 
   Plug 'samoshkin/vim-mergetool'                " Git merge
+
+" Fold 
+  Plug 'tmhedberg/SimpylFold'
 call plug#end()
 
 
