@@ -42,5 +42,7 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 " auto open a nerdtree buffer on open.
 " autocmd vimenter * if !argc() | NERDTree | endif
 
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
 " Ignore some type of files: 
-let NERDTreeIgnore=['__pycache__']
+let NERDTreeIgnore=['__pycache__', 'site-packages']

@@ -27,9 +27,11 @@ let g:fzf_colors = {
     \ 'spinner': ['fg', 'fzf_spinner'] }
 
 " :Files
+"command! -bang -nargs=? -complete=dir Files
+"    \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'bat --color=always --theme=TwoDark --style=header,numbers,snip --line-range :300 {}']}, <bang>0)
 command! -bang -nargs=? -complete=dir Files
-   \ call fzf#vim#files(<q-args>, {'options': ['--layout=reverse', '--info=inline', '--preview', 'bat --color=always --theme=TwoDark --style=header,numbers,snip --line-range :300 {}']}, <bang>0)
-map <F6> :Files<CR> 
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview({'options': ['--layout=reverse', '--info=inline']}), <bang>0)
+map <F6> :Files<CR>
 
 " :Rg
 command! -bang -nargs=* Rg
@@ -37,3 +39,5 @@ command! -bang -nargs=* Rg
   \   'rg --column --line-number --color=always --smart-case -- '.shellescape(<q-args>), 1, {'options': ['--exact', '--layout=reverse']}, <bang>0)
 map <F7> :Rg<CR>
 
+" Ignore some file 
+let $FZF_DEFAULT_COMMAND='find . \( -name __pycache__ -o -name .git \) -prune -o -print'

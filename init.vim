@@ -8,6 +8,7 @@
 " http://youtube.com/VuNguyenCoder
 " http://facebook.com/VuNguyenCoder
 
+lua print('Neovim started...')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General settings
@@ -151,6 +152,11 @@ endif
 
 " Disable automatic comment in newline
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+
+" Close buffer without exitting vim 
+nnoremap <silent> <leader>bd :bp \| sp \| bn \| bd<CR>
 
 " Other setting
 for setting_file in split(glob(stdpath('config').'/settings/*.vim'))
