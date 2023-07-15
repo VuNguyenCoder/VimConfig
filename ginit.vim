@@ -14,7 +14,7 @@ GuiTabline 0
 set guitablabel=\[%N\]\ %t\ %M 
 
 " Set font
-set guifont=Droid\ Sans\ Mono\ for\ Powerline:h15
+set guifont=DejaVuSansMono\ Nerd\ Font\ Mono
 
 " Set key map to paste 
 inoremap <silent> <S-Insert> <C-R>+
