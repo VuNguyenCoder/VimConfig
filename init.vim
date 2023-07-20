@@ -8,7 +8,7 @@
 " http://youtube.com/VuNguyenCoder
 " http://facebook.com/VuNguyenCoder
 
-lua print('Neovim started...')
+" lua print('Neovim started...')
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => General settings
@@ -24,7 +24,7 @@ set foldnestmax=1
 set foldlevelstart=3        "  
 set number                  " Show line number
 set ignorecase              " Enable case-sensitive 
-
+" set guicursor=i:block
 " Disable backup
 set nobackup
 set nowb
