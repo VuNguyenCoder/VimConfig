@@ -115,10 +115,11 @@ call plug#begin(stdpath('config').'/plugged')
     \ }
 
 " Code syntax highlight
-  Plug 'yuezk/vim-js'                           " Javascript
-  Plug 'MaxMEllon/vim-jsx-pretty'               " JSX/React
-  Plug 'jackguo380/vim-lsp-cxx-highlight'       " C/C++
-  Plug 'uiiaoo/java-syntax.vim'                 " Java
+  " Plug 'yuezk/vim-js'                           " Javascript
+  " Plug 'MaxMEllon/vim-jsx-pretty'               " JSX/React
+  " Plug 'jackguo380/vim-lsp-cxx-highlight'       " C/C++
+  " Plug 'uiiaoo/java-syntax.vim'                 " Java
+  Plug 'sheerun/vim-polyglot'
   
 " Debugging
   Plug 'puremourning/vimspector'                " Vimspector
