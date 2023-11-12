@@ -14,9 +14,9 @@ lua print('Neovim started...')
 " => General settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set mouse=a                 " Enable mouse
-set tabstop=4               " 
-set shiftwidth=4            " 
-set expandtab
+set expandtab               " Tab setting 
+set tabstop=4               " Tab setting 
+set shiftwidth=4            " Tab setting
 set listchars=tab:\¦\       " Tab charactor 
 set list
 set foldmethod=syntax         
@@ -31,7 +31,7 @@ set nowb
 set noswapfile
 
 " Optimize 
-set synmaxcol=200
+set synmaxcol=3000    "Prevent breaking syntax hightlight when string too long. Max = 3000"
 set lazyredraw
 au! BufNewFile,BufRead *.json set foldmethod=indent " Change foldmethod for specific filetype
 
