@@ -14,7 +14,7 @@ GuiTabline 0
 set guitablabel=\[%N\]\ %t\ %M 
 
 " Set font
-set guifont=DejaVuSansMono\ Nerd\ Font\ Mono
+set guifont=DejaVuSansM\ Nerd\ Font\ Mono
 
 " Set key map to paste 
 inoremap <silent> <S-Insert> <C-R>+

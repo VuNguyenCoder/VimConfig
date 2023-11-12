@@ -44,5 +44,8 @@ autocmd BufEnter * if bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_
 
 " autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
+" Open file, then sync directory that contains that file 
+autocmd BufEnter * lcd %:p:h
+
 " Ignore some type of files: 
 let NERDTreeIgnore=['__pycache__', 'site-packages']
