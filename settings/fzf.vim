@@ -40,4 +40,4 @@ command! -bang -nargs=* Rg
 map <F7> :Rg<CR>
 
 " Ignore some file 
-let $FZF_DEFAULT_COMMAND='find . \( -name __pycache__ -o -name .git \) -prune -o -print'
+let $FZF_DEFAULT_COMMAND='find . \( -name __pycache__ -o -name .git -name .vagrant \) -prune -o -print'

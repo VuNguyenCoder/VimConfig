@@ -77,6 +77,7 @@ nmap /\ :noh<CR>
 call plug#begin(stdpath('config').'/plugged')
 " Theme
   Plug 'joshdick/onedark.vim',                  " Dark theme
+  Plug 'akinsho/bufferline.nvim', { 'tag': '*' }
 
 " File browser
   Plug 'preservim/nerdTree'                     " File browser  
@@ -102,7 +103,6 @@ call plug#begin(stdpath('config').'/plugged')
   Plug 'neoclide/coc.nvim', 
     \ {'branch': 'release'}                     " Language server protocol (LSP) 
   Plug 'jiangmiao/auto-pairs'                   " Parenthesis auto 
-  Plug 'alvan/vim-closetag'
   Plug 'mattn/emmet-vim' 
   Plug 'preservim/nerdcommenter'                " Comment code 
   " Plug 'liuchengxu/vista.vim'                   " Function tag bar
@@ -141,6 +141,21 @@ call plug#end()
 " Set theme 
 colorscheme onedark
 
+set termguicolors
+autocmd VimEnter * call s:setup_lualine()
+function! s:setup_lualine() abort
+lua<<EOF
+require("bufferline").setup{
+  options = {
+    indicator = {
+      style = 'none',
+    },
+    diagnostics = "coc",
+  }
+}
+EOF
+endfunction
+
 " Overwrite some color highlight 
 if (has("autocmd"))
   augroup colorextend
@@ -163,3 +178,4 @@ nnoremap <silent> <leader>bd :bp \| sp \| bn \| bd<CR>
 for setting_file in split(glob(stdpath('config').'/settings/*.vim'))
   execute 'source' setting_file
 endfor
+
